@@ -2,8 +2,9 @@
   <div class="row">
     <div class="col-md-6">
       <div class="row top30">
-        <div class="col-md-12 text-center" style="padding-right:20px; border-right: 1px solid #ccc;">
-          <img [src]="url" #appImgAction style="width: 200px; height: auto;">
+        <div class="col-md-12 text-center"
+             style="height: 60%; padding-right:20px; border-right: 1px solid #ccc; overflow: scroll;">
+          <img [src]="url" #appImgAction>
         </div>
       </div>
       <div class="row top15">
@@ -19,8 +20,9 @@
           <div class="col-md-6">
             <h4>Available Actions</h4>
             <hr>
-            <button *ngFor="let value of availableActions" [disabled]="!isFileUploaded" class="col-md-12 btn btn-info top5"
-            (click)="applyAction(value)">
+            <button *ngFor="let value of availableActions" [disabled]="!isFileUploaded"
+                    class="col-md-12 btn btn-info top5"
+                    (click)="applyAction(value)">
               {{value.name}}
             </button>
           </div>
@@ -28,7 +30,7 @@
             <h4>Applied Actions</h4>
             <hr>
             <button *ngFor="let value of appliedActions" class="col-md-12 btn btn-danger top5"
-                 (click)="removeAction(value)">
+                    (click)="removeAction(value)">
               {{value.name}}
             </button>
           </div>
